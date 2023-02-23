@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row justify-content-between">
+    <div *ngFor="let item of resultsList$| async; let i = index" class="card col-3" style="width: 15rem;">
+      <div class="card">
+        <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}" data-bs-toggle="modal"
+          [attr.data-bs-target]="'#exampleModal' + i">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+        </div>
+      </div>
+      <div class="modal fade" [id]="'exampleModal' + i" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{ item.name }}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body card col-12">
+                <img src="{{ item.image }}" alt="{{ item.name }}">
+                <p>Status: {{ item.status }}</p>
+                <p>Gender: {{ item.gender }}</p>
+                <p>Origin: {{ item.origin?.name }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
