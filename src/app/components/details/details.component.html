@@ -1,1 +1,18 @@
-<p>details works!</p>
+<div class="container">
+  <div class="row justify-content-between">
+    <div>
+      <div class="card">
+        <img src="{{rickmorty.result?.image}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{rickmorty.result?.name }}</h5>
+          <p>{{rickmorty.result?.status}}</p>
+          <p>{{rickmorty.result?.species}}</p>
+          <p>{{rickmorty.result?.type}}</p>
+          <p>{{rickmorty.result?.gender}}</p>
+          <p>{{rickmorty.result?.origin?.name}}</p>
+          <p>{{rickmorty.result?.origin?.url}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,3 @@
-import { ListModel } from "../list-model";
-
 export class ApiReturn {
   info?: Info;
   results?: Results[];
@@ -8,19 +6,25 @@ export class ApiReturn {
   }
 }
 export class Results {
-  id?: number;
+  id?: number
   name?: string;
   status?: string;
   species?: string;
+  type?: string;
   gender?: string;
   origin?: Origin;
+  location?: Location;
   image?: string;
 }
 export class Info {
-  count?: string;
+  count?: number;
   pages?: number;
   next?: string;
   prev?: null;
+
+  constructor(obj: Partial<Info>) {
+    Object.assign(this, obj);
+  }
 }
 export class Origin {
   name?: string;
