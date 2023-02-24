@@ -1,3 +1,4 @@
+import { Results } from './../../models/api/rickmorty-model';
 import { ApiService } from './../../service/api.service';
 import { Component, OnInit } from '@angular/core';
 import { RickMorty } from 'src/app/models/api/rickmorty-model';
@@ -10,19 +11,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsComponent implements OnInit {
 
-  public rickmorty:RickMorty = new RickMorty({});
+  public rickmorty: Results = new Results({});
 
   constructor(public service: ApiService,
-              public route: ActivatedRoute) {}
+    public route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    let paramName = this.route.snapshot.paramMap.get('name');
-    if(paramName) {
-      this.service.getCharacterByName(paramName).subscribe(
-        (resp) => {
+    this.route.params.subscribe((params) => {
+      const id = params['id'];
+      if (id) {
+        this.service.getDetails(id).subscribe((resp) => {
           this.rickmorty = resp;
-        }
-      );
-    }
+        })
+      }
+    });
   }
 }

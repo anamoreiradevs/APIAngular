@@ -1,4 +1,4 @@
-import { RickMorty } from './../models/api/rickmorty-model';
+import { RickMorty, Results } from './../models/api/rickmorty-model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiReturn } from '../models/api/api-return';
@@ -15,8 +15,8 @@ export class ApiService {
   getCharacterList() {
     return this.http.get<ApiReturn>(this.URL_API);
   }
-  getCharacterByName(name: string) {
-    return this.http.get<ApiReturn>(`${this.URL_API}/${name}`);
+  getDetails(id: number) {
+    return this.http.get<Results>(`${this.URL_API}/${id}`);
   }
 
 }

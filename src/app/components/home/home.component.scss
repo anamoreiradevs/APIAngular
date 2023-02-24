@@ -1,41 +1,7 @@
-
 .card {
   margin: 10px;
+  background: linear-gradient(#8ef301, #b9faad);
 }
-.modal-content {
-  display: flex;
-  justify-content: center;
-}
-.modal-title {
-  text-align: center;
-  font-size: 30px;
-}
-.modal-dialog {
-  display: flex;
-}
-
-.modal-content{
-  background: linear-gradient(#8fee0a, #95ee86);
-  color: #2a2929;
-}
-
-.modal-header{
-  border-color: #2a2929;
-}
-.modal-body {
-  width: 60%;
-  margin-left: 110px;
-  padding-top: 2rem;
-  background: linear-gradient(#7222f3, #1ad206);
-}
-.modal-body img {
-  border-radius: 20px;
-}
-.modal-body p {
-  text-align: center;
-  padding-top: 5px;
-  color: #fff;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-family:Georgia, 'Times New Roman', Times, serif
+.card-body{
+  background: linear-gradient(#8fee0a, #22d203);
 }

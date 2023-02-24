@@ -15,6 +15,9 @@ export class Results {
   origin?: Origin;
   location?: Location;
   image?: string;
+  constructor(obj: Partial<Results>) {
+    Object.assign(this, obj);
+  }
 }
 export class Info {
   count?: number;
